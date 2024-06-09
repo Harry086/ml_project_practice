@@ -1,0 +1,30 @@
+import pandas as pd
+df =pd.read_csv("D:\\ash\\ml\\ml 2.0\\carprices.csv")
+df
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+plt.scatter(df['Mileage'],df['Sell Price($)'])
+
+plt.scatter(df['Age(yrs)'],df['Sell Price($)'])
+
+x=df[['Mileage','Age(yrs)']]
+x
+
+y=df['Sell Price($)']
+y
+
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.3)
+x_train
+y_train
+x_test
+y_test
+
+from sklearn.linear_model import LinearRegression
+clf = LinearRegression()
+clf.fit(x_train, y_train)
+
+clf.predict(x_test)
+clf.predict(x_test,y_test)
