@@ -1,0 +1,5 @@
+categorical variables
+.nominnal:male,female  green,redd,blue
+.ordinal:grade,master,phd
+
+one hot encoding
